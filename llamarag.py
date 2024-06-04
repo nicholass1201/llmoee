@@ -1,6 +1,7 @@
 import psycopg2
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.llms.llama_cpp import LlamaCPP
+from decouple import config
 
 embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en")
 
@@ -24,9 +25,9 @@ llm = LlamaCPP(
 )
 
 db_name = "vector_db"
-host = "105.53.140.229"
-password = "amsdi$01"
-port = "5432"
+host = config('HOSTNAME')
+password = config('PASSWORD')
+port = config('CONFIG')
 user = "vector_user"
 
 conn = psycopg2.connect( user=user, password=password,host=host,port=port, database="postgres" )

@@ -2,15 +2,11 @@
 
 . profile.sh
 
-# 환경설정
-echo "setenv_$WC_ENV.sh"
-. setenv_"$WC_ENV".sh
-
-echo "PROC_NAME_mngChatBot name: --->$PROC_NAME_mngChatBot"
+echo "PROC_NAME_OEE_CB_MGR name: ---> $PROC_NAME_OEE_CB_MGR"
 
 # PID 조회
-mngchatbot_pid=$(ps ax | grep -v grep | grep ${PROC_NAME_mngChatBot} | awk '{print $1}' | head -1)
-echo "mngchatbot_pid [$mngchatbot_pid]"
+oeechatbot_mgr_pid=$(ps ax | grep -v grep | grep ${PROC_NAME_OEE_CB_MGR} | awk '{print $1}' | head -1)
+echo "oeechatbot_mgr_pid [$oeechatbot_mgr_pid]"
 
 kill_process()
 {
@@ -24,10 +20,10 @@ kill_process()
     kill "$1";
 };
 
-if [ -n "$mngchatbot_pid" ]
+if [ -n "$oeechatbot_mgr_pid" ]
 then
-    kill_process "$mngchatbot_pid"
-    echo "stop $PROC_NAME_mngchatbot [$mngchatbot_pid] service"
+    kill_process "$oeechatbot_mgr_pid"
+    echo "stop $PROC_NAME_OEE_CB_MGR [$oeechatbot_mgr_pid] service"
 else
-    echo "$PROC_NAME_mngchatbot is not running"
+    echo "$PROC_NAME_OEE_CB_MGR is not running"
 fi

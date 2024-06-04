@@ -1,0 +1,238 @@
+/home/sdiaadmin/llm_env/lib/python3.10/site-packages/pydantic/_internal/_config.py:322: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+======oee_proj path:  /home/sdiaadmin/llm/llmoee/oeeCbMgr
+======oee_proj path:  /home/sdiaadmin/llm/llmoee
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+===================mngWc_app FastAPI loading1==========
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+INFO:     Started server process [90510]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     105.53.140.144:65110 - "GET / HTTP/1.1" 404 Not Found
+INFO:     105.53.140.144:65111 - "GET /wc/v1/project/list HTTP/1.1" 405 Method Not Allowed
+INFO:     105.53.140.144:49581 - "GET /oee/v1/project/list HTTP/1.1" 404 Not Found
+INFO:     105.53.140.144:49715 - "GET /project/list HTTP/1.1" 404 Not Found
+INFO:     105.53.140.144:50897 - "GET /docs HTTP/1.1" 200 OK
+INFO:     105.53.140.144:50897 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [90510]
+/home/sdiaadmin/llm_env/lib/python3.10/site-packages/pydantic/_internal/_config.py:322: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+======oee_proj path:  /home/sdiaadmin/llm/llmoee/oeeCbMgr
+======oee_proj path:  /home/sdiaadmin/llm/llmoee
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+===================mngWc_app FastAPI loading1==========
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+INFO:     Started server process [92491]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [92491]
+/home/sdiaadmin/llm_env/lib/python3.10/site-packages/pydantic/_internal/_config.py:322: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+======oee_proj path:  /home/sdiaadmin/llm/llmoee/oeeCbMgr
+======oee_proj path:  /home/sdiaadmin/llm/llmoee
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+===================mngWc_app FastAPI loading1==========
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+INFO:     Started server process [92590]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [92590]
+/home/sdiaadmin/llm_env/lib/python3.10/site-packages/pydantic/_internal/_config.py:322: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+======oee_proj path:  /home/sdiaadmin/llm/llmoee/oeeCbMgr
+======oee_proj path:  /home/sdiaadmin/llm/llmoee
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+===================mngWc_app FastAPI loading1==========
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+INFO:     Started server process [92912]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     105.53.140.144:64581 - "GET / HTTP/1.1" 404 Not Found
+INFO:     105.53.140.144:64581 - "GET /docs HTTP/1.1" 200 OK
+INFO:     105.53.140.144:64581 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     105.53.140.144:64582 - "GET /wc/v1 HTTP/1.1" 404 Not Found
+INFO:     105.53.140.144:64600 - "GET /wc/v1/project/list HTTP/1.1" 405 Method Not Allowed
+INFO:     105.53.140.144:64602 - "GET / HTTP/1.1" 404 Not Found
+INFO:     105.53.140.144:64622 - "GET /wc/v1/project/list HTTP/1.1" 405 Method Not Allowed
+INFO:     105.53.140.144:64743 - "GET /wc/v1/category/list HTTP/1.1" 405 Method Not Allowed
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [92912]
+/home/sdiaadmin/llm_env/lib/python3.10/site-packages/pydantic/_internal/_config.py:322: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+======oee_proj path:  /home/sdiaadmin/llm/llmoee/oeeCbMgr
+======oee_proj path:  /home/sdiaadmin/llm/llmoee
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+===================mngWc_app FastAPI loading1==========
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+Traceback (most recent call last):
+  File "/home/sdiaadmin/llm/llmoee/oeeCbMgr/oeeCbMgr_app.py", line 67, in <module>
+    def read_root(request: Request):
+NameError: name 'Request' is not defined
+/home/sdiaadmin/llm_env/lib/python3.10/site-packages/pydantic/_internal/_config.py:322: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+======oee_proj path:  /home/sdiaadmin/llm/llmoee/oeeCbMgr
+======oee_proj path:  /home/sdiaadmin/llm/llmoee
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+===================mngWc_app FastAPI loading1==========
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+INFO:     Started server process [93059]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     105.53.140.144:65408 - "GET / HTTP/1.1" 200 OK
+INFO:     105.53.140.144:65408 - "GET / HTTP/1.1" 200 OK
+INFO:     105.53.140.144:65409 - "GET /docs HTTP/1.1" 200 OK
+INFO:     105.53.140.144:65409 - "GET /openapi.json HTTP/1.1" 200 OK

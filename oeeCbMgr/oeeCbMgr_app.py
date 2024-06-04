@@ -1,6 +1,6 @@
-from fastapi import FastAPI, UploadFile, File, Form, Depends
+from fastapi import FastAPI, UploadFile, File, Form, Depends, Request
 from pydantic import BaseModel
-from db_proc_wc import engineconn, text
+from oee_db_conn import EngineConn
 
 from sqlalchemy import *
 from fastapi.encoders import jsonable_encoder
@@ -8,36 +8,35 @@ from fastapi import APIRouter
 import uvicorn
 
 # project managment
-import project_biz
-from chatbot_models import Project
-import project_schema
+import oee_project
+from oee_chatbot_models import Project
+import oee_project_schema
 
 # project 첨부 문서 관리
-import projectRagDoc_biz
-from chatbot_models import Project_rag_doc 
-import projectRagDoc_schema
+import oee_project_rag_docs
+from oee_chatbot_models import Project_rag_doc 
+import oee_project_rag_docs_schema
 
 
 # 카테고리 관리
-import category_biz
-from chatbot_models import Category
-import category_schema
+import oee_category_biz
+from oee_chatbot_models import Category
+import oee_category_schema
 
 
 # 인텐트 관리
-import intent_biz
-from chatbot_models import Intent
-import intent_schema
+import oee_intent_biz
+from oee_chatbot_models import Intent
+import oee_intent_schema
 
-from chatLlmMng101 import chatSubLlmMng101_biz
-from chatLlmMng102 import chatSubLlmMng102_biz
-from chatLlmMng201 import chatSubLlmMng201_biz
-from chatLlmMng202 import chatSubLlmMng202_biz
+from oeeLlmCbMgr101 import oee_llm_cb_submgr101
+from oeeLlmCbMgr102 import oee_llm_cb_submgr102
+from oeeLlmCbMgr201 import oee_llm_cb_submgr201
+from oeeLlmCbMgr202 import oee_llm_cb_submgr202
 
 print("===================mngWc_app FastAPI loading1==========")
 app = FastAPI()
-engine = engineconn()
-
+engine = EngineConn()
 
 
 router = APIRouter(
@@ -64,22 +63,25 @@ def makedirs(varRagDir):
 def lpad(i, width, fillchar='0'):
     return str(i).rjust(width, fillchar)        
 
+@app.get("/")
+def read_root(request: Request):
+    return {"message": "Welcome to the Mental Health Chatbot API!"}
 
 @router.post("/projectRagDoc/uploadUrls" )
-def projectRagDoc_urlUpload(  params : projectRagDoc_schema.ProjectRagDocUrlParam ):
+def projectRagDoc_urlUpload(  params : oee_project_rag_docs_schema.ProjectRagDocUrlParam ):
     print("====================mngWc_app projectRagDoc_urlUpload start ==========")
 
     for param1 in params.project_rag_doc_list:
         print("====================mngWc_app projectRagDoc_urlUpload param1: " , param1)            
         # print("====================mngWc_app projectRagDoc_urlUpload param1.project_rag_doc_list: " , param1.project_rag_doc_list)                    
         
-        projectRagDoc_schema.ProjectRagDoc_schema.company_id=params.company_id
-        projectRagDoc_schema.ProjectRagDoc_schema.project_id=params.project_id                
-        projectRagDoc_schema.ProjectRagDoc_schema.src_url_addr=param1.src_url_addr                         
-        projectRagDoc_schema.ProjectRagDoc_schema.doc_type_cd=param1.doc_type_cd                                 
-        projectRagDoc_schema.ProjectRagDoc_schema.applying_yn=param1.applying_yn                                         
-        projectRagDoc_schema.ProjectRagDoc_schema.create_id=param1.create_id        
-        param2 = projectRagDoc_schema.ProjectRagDoc_schema
+        oee_project_rag_docs_schema.ProjectRagDoc_schema.company_id=params.company_id
+        oee_project_rag_docs_schema.ProjectRagDoc_schema.project_id=params.project_id                
+        oee_project_rag_docs_schema.ProjectRagDoc_schema.src_url_addr=param1.src_url_addr                         
+        oee_project_rag_docs_schema.ProjectRagDoc_schema.doc_type_cd=param1.doc_type_cd                                 
+        oee_project_rag_docs_schema.ProjectRagDoc_schema.applying_yn=param1.applying_yn                                         
+        oee_project_rag_docs_schema.ProjectRagDoc_schema.create_id=param1.create_id        
+        param2 = oee_project_rag_docs_schema.ProjectRagDoc_schema
         print("====================mngWc_app projectRagDoc_urlUpload param2: " , param2)            
         session  = engine.sessionmaker()     
         stmt1 =  delete(Project_rag_doc).where(Project_rag_doc.project_id==param2.project_id, Project_rag_doc.src_url_addr==param2.src_url_addr) 
@@ -112,7 +114,7 @@ def projectRagDoc_urlUpload(  params : projectRagDoc_schema.ProjectRagDocUrlPara
 
 
 @router.post('/projectRagDoc/uploadFiles')
-async def projectRagDocUploadFiles(param1: projectRagDoc_schema.ProjectRagDoc_form = Depends(projectRagDoc_schema.ProjectRagDoc_form.as_form) , in_files: List[UploadFile] = File(...)):
+async def projectRagDocUploadFiles(param1: oee_project_rag_docs_schema.ProjectRagDoc_form = Depends(oee_project_rag_docs_schema.ProjectRagDoc_form.as_form) , in_files: List[UploadFile] = File(...)):
     file_urls=[]
     for file in in_files:
 
@@ -152,17 +154,14 @@ async def projectRagDocUploadFiles(param1: projectRagDoc_schema.ProjectRagDoc_fo
         #with open(file_location_download, "wb+") as file_object_download:
         #    file_object_download.write(file.file.read())
 
-
-
-   
-        projectRagDoc_schema.ProjectRagDoc_schema.company_id=param1.company_id
-        projectRagDoc_schema.ProjectRagDoc_schema.project_id=param1.project_id                
-        projectRagDoc_schema.ProjectRagDoc_schema.src_file_name=file.filename                
-        projectRagDoc_schema.ProjectRagDoc_schema.src_real_file_name=saved_file_name                         
-        projectRagDoc_schema.ProjectRagDoc_schema.doc_type_cd=param1.doc_type_cd                                 
-        projectRagDoc_schema.ProjectRagDoc_schema.applying_yn=param1.applying_yn                                         
-        projectRagDoc_schema.ProjectRagDoc_schema.create_id=param1.create_id        
-        param2 = projectRagDoc_schema.ProjectRagDoc_schema
+        oee_project_rag_docs_schema.ProjectRagDoc_schema.company_id=param1.company_id
+        oee_project_rag_docs_schema.ProjectRagDoc_schema.project_id=param1.project_id                
+        oee_project_rag_docs_schema.ProjectRagDoc_schema.src_file_name=file.filename                
+        oee_project_rag_docs_schema.ProjectRagDoc_schema.src_real_file_name=saved_file_name                         
+        oee_project_rag_docs_schema.ProjectRagDoc_schema.doc_type_cd=param1.doc_type_cd                                 
+        oee_project_rag_docs_schema.ProjectRagDoc_schema.applying_yn=param1.applying_yn                                         
+        oee_project_rag_docs_schema.ProjectRagDoc_schema.create_id=param1.create_id        
+        param2 = oee_project_rag_docs_schema.ProjectRagDoc_schema
         print("============== param2: " , param2)        
 
         session  = engine.sessionmaker()     
@@ -204,7 +203,7 @@ async def projectRagDocUploadFiles(param1: projectRagDoc_schema.ProjectRagDoc_fo
  
 
 @router.post('/projectRagDoc/downloadFiles')
-async def projectRagDocDownloadFiles(param1 : projectRagDoc_schema.ProjectRagDocSrchParam):
+async def projectRagDocDownloadFiles(param1 : oee_project_rag_docs_schema.ProjectRagDocSrchParam):
 
 
     print("============== BASE_DIR: " , BASE_DIR)    
@@ -242,8 +241,8 @@ async def projectRagDocDownloadFiles(param1 : projectRagDoc_schema.ProjectRagDoc
 
  
 
-@router.post("/project/list" , response_model=project_schema.ProjectList)
-def project_list(param : project_schema.ProjectSearchParam):
+@router.post("/project/list" , response_model=oee_project_schema.ProjectList)
+def project_list(param : oee_project_schema.ProjectSearchParam):
     print("===================mngWc_app project_list start==========")
     total_cnt, _project_list = project_biz.get_project_list(param)    
     print("mngWc_app project_list total_cnt: " , total_cnt)    
@@ -271,19 +270,19 @@ def project_list(param : project_schema.ProjectSearchParam):
     }
         
 @router.post("/project/insert")
-async def project_insert(param : project_schema.Project_schema):
+async def project_insert(param : oee_project_schema.Project_schema):
     print("app_sqlalchemy_query_project project_insert start==========")
     #print("project_id: " , project_id)    
     #print("project_name: " , project_name)        
-    project_schema.ProjectSearchParam.project_name=param.project_name
-    project_schema.ProjectSearchParam.project_id=""
-    project_schema.ProjectSearchParam.in_service_yn=""
-    project_schema.ProjectSearchParam.company_id=param.company_id    
-    project_schema.ProjectSearchParam.page_num = "1" ;         
-    project_schema.ProjectSearchParam.count_per_page = "10" ;                     
-    project_schema.ProjectSearchParam.order_type = "asc" ;      
+    oee_project_schema.ProjectSearchParam.project_name=param.project_name
+    oee_project_schema.ProjectSearchParam.project_id=""
+    oee_project_schema.ProjectSearchParam.in_service_yn=""
+    oee_project_schema.ProjectSearchParam.company_id=param.company_id    
+    oee_project_schema.ProjectSearchParam.page_num = "1" ;         
+    oee_project_schema.ProjectSearchParam.count_per_page = "10" ;                     
+    oee_project_schema.ProjectSearchParam.order_type = "asc" ;      
 
-    projectSearch= project_schema.ProjectSearchParam
+    projectSearch= oee_project_schema.ProjectSearchParam
 
     total_cnt, _project_list = project_biz.get_project_list(projectSearch)    
     print("_company_list len: " , len(_project_list))
@@ -334,7 +333,7 @@ async def project_insert(param : project_schema.Project_schema):
 
 
 @router.post("/project/modify")
-async def project_modify(param : project_schema.Project_schema):
+async def project_modify(param : oee_project_schema.Project_schema):
     print("app_sqlalchemy_query_project project_modify start==========")
     print("===================mngWc_app project_list start==========")
     #total_cnt, _project_list = project_biz.get_project_list(param)    
@@ -374,7 +373,7 @@ async def project_modify(param : project_schema.Project_schema):
     }
 
 @router.post("/project/delete")
-async def project_delete(param : project_schema.Project_schema):
+async def project_delete(param : oee_project_schema.Project_schema):
     print("app_sqlalchemy_query_company project delete start==========")
     #print("project_id: " , project_id)    
     #print("project_name: " , project_name)        
@@ -401,7 +400,7 @@ async def project_delete(param : project_schema.Project_schema):
  
 
 @router.post("/project/applyingInServiceYn")
-async def project_applyingInServiceYn(param : project_schema.Project_schema):
+async def project_applyingInServiceYn(param : oee_project_schema.Project_schema):
     print("app_sqlalchemy_query_project project_applyingInServiceYn start==========")
     print("===================mngWc_app project_applyingInServiceYn start==========")
     #total_cnt, _project_list = project_biz.get_project_list(param)    
@@ -438,8 +437,8 @@ async def project_applyingInServiceYn(param : project_schema.Project_schema):
     }
 
 
-@router.post("/projectRagDoc/list" , response_model=projectRagDoc_schema.ProjectRagDocList)
-def projectRagDoc_list(param : projectRagDoc_schema.ProjectRagDocSrchParam):
+@router.post("/projectRagDoc/list" , response_model=oee_project_rag_docs_schema.ProjectRagDocList)
+def projectRagDoc_list(param : oee_project_rag_docs_schema.ProjectRagDocSrchParam):
     print("====================mngWc_app projectRagDoc_list start ==========")
     total_cnt, _projectRagDoc_list = projectRagDoc_biz.get_projectRagDoc_list(param)    
     print("mngWc_app projectRagDoc_list total_cnt: " , total_cnt)    
@@ -460,7 +459,7 @@ def projectRagDoc_list(param : projectRagDoc_schema.ProjectRagDocSrchParam):
 
 
 @router.post("/projectRagDoc/delete")
-async def projectRagDoc_delete(param : projectRagDoc_schema.ProjectRagDoc_schema):
+async def projectRagDoc_delete(param : oee_project_rag_docs_schema.ProjectRagDoc_schema):
     print("app_sqlalchemy_query_project projectRagDoc_delete delete start==========")
     #print("project_id: " , project_id)    
     #print("project_name: " , project_name)   
@@ -484,19 +483,19 @@ async def projectRagDoc_delete(param : projectRagDoc_schema.ProjectRagDoc_schema
     }
 
 @router.post("/projectRagDoc/storingRagDoc")
-async def storingRagDoc(params : projectRagDoc_schema.ProjectRagDocUrlParam ):
+async def storingRagDoc(params : oee_project_rag_docs_schema.ProjectRagDocUrlParam ):
     print("app projectRagDoc applyingProjectRagDoc start==========")
     api = "mngChatBot.projectRagDoc.applyingProjectRagDoc"
     
-    project_schema.ProjectSearchParam.company_id = params.company_id    
-    project_schema.ProjectSearchParam.project_id = params.project_id
-    project_schema.ProjectSearchParam.project_name = ""    
-    project_schema.ProjectSearchParam.page_num = "1" ;         
-    project_schema.ProjectSearchParam.count_per_page = "10" ;                     
-    project_schema.ProjectSearchParam.order_type = "asc" ;      
+    oee_project_schema.ProjectSearchParam.company_id = params.company_id    
+    oee_project_schema.ProjectSearchParam.project_id = params.project_id
+    oee_project_schema.ProjectSearchParam.project_name = ""    
+    oee_project_schema.ProjectSearchParam.page_num = "1" ;         
+    oee_project_schema.ProjectSearchParam.count_per_page = "10" ;                     
+    oee_project_schema.ProjectSearchParam.order_type = "asc" ;      
 
     
-    p_total_cnt, _project_list = project_biz.get_project_list(project_schema.ProjectSearchParam)    
+    p_total_cnt, _project_list = project_biz.get_project_list(oee_project_schema.ProjectSearchParam)    
     print("================ applyingprojectRagDoc p_total_cnt: ", p_total_cnt)     
     print("================ applyingprojectRagDoc len : _project_list: ", len(_project_list ) )        
 
@@ -509,14 +508,14 @@ async def storingRagDoc(params : projectRagDoc_schema.ProjectRagDocUrlParam ):
 
 
     for paramRagDoc in params.project_rag_doc_list:
-        projectRagDoc_schema.ProjectRagDocSrchParam.company_id = params.company_id 
-        projectRagDoc_schema.ProjectRagDocSrchParam.project_id = params.project_id         
-        projectRagDoc_schema.ProjectRagDocSrchParam.project_rag_doc_id = paramRagDoc.project_rag_doc_id                 
-        projectRagDoc_schema.ProjectRagDocSrchParam.src_file_name= ""
-        projectRagDoc_schema.ProjectRagDocSrchParam.page_num = "1" ;         
-        projectRagDoc_schema.ProjectRagDocSrchParam.count_per_page = "10" ;                     
-        projectRagDoc_schema.ProjectRagDocSrchParam.order_type = "asc" ;              
-        param2 = projectRagDoc_schema.ProjectRagDocSrchParam
+        oee_project_rag_docs_schema.ProjectRagDocSrchParam.company_id = params.company_id 
+        oee_project_rag_docs_schema.ProjectRagDocSrchParam.project_id = params.project_id         
+        oee_project_rag_docs_schema.ProjectRagDocSrchParam.project_rag_doc_id = paramRagDoc.project_rag_doc_id                 
+        oee_project_rag_docs_schema.ProjectRagDocSrchParam.src_file_name= ""
+        oee_project_rag_docs_schema.ProjectRagDocSrchParam.page_num = "1" ;         
+        oee_project_rag_docs_schema.ProjectRagDocSrchParam.count_per_page = "10" ;                     
+        oee_project_rag_docs_schema.ProjectRagDocSrchParam.order_type = "asc" ;              
+        param2 = oee_project_rag_docs_schema.ProjectRagDocSrchParam
         total_cnt, _projectRagDoc_list = projectRagDoc_biz.get_projectRagDoc_list(param2)    
         print("========applyingprojectRagDoc total_cnt : ", total_cnt)                                    
         print("========applyingprojectRagDoc _projectRagDoc_list : ", _projectRagDoc_list)                            
@@ -577,9 +576,6 @@ async def storingRagDoc(params : projectRagDoc_schema.ProjectRagDocUrlParam ):
 
         session.commit() 
     session.close()
-    
-
-
 
     return {       
         'api': api,        
@@ -589,8 +585,8 @@ async def storingRagDoc(params : projectRagDoc_schema.ProjectRagDocUrlParam ):
 
     }
 
-@router.post("/category/list" , response_model=category_schema.CategoryList)
-def category_list(param : category_schema.CategorySrchParam):
+@router.post("/category/list" , response_model=oee_category_schema.CategoryList)
+def category_list(param : oee_category_schema.CategorySrchParam):
     print("====================mngWc_app category_list start==========")
     total_cnt, _category_list = category_biz.get_category_list(param)    
     print("mngWc_app category_list total_cnt: " , total_cnt)    
@@ -606,10 +602,8 @@ def category_list(param : category_schema.CategorySrchParam):
         'category_list': _category_list
     }
     
-
-
 @router.post("/category/insert")
-async def category_insert(param : category_schema.Category_schema):
+async def category_insert(param : oee_category_schema.Category_schema):
     print("============ mngWc_app category insert start==========")
     #print("project_id: " , project_id)    
     #print("project_name: " , project_name)        
@@ -639,10 +633,8 @@ async def category_insert(param : category_schema.Category_schema):
 
     }
 
-
-
 @router.post("/category/update")
-async def category_update(param : category_schema.Category_schema):
+async def category_update(param : oee_category_schema.Category_schema):
     print("============ mngWc_app category insert update==========")
     #print("project_id: " , project_id)    
     #print("project_name: " , project_name)    
@@ -663,20 +655,15 @@ async def category_update(param : category_schema.Category_schema):
     session.commit() 
     session.close()
 
-
-
     return {       
         'api': api,        
         'status': status,        
         'error_message': error_message,        
         'total_cnt': total_cnt
-
     }
 
-
-
 @router.post("/category/delete")
-async def category_delete(param : category_schema.Category_schema):
+async def category_delete(param : oee_category_schema.Category_schema):
     print("============ mngWc_app category delete==========")
     #print("project_id: " , project_id)    
     #print("project_name: " , project_name)    
@@ -700,8 +687,6 @@ async def category_delete(param : category_schema.Category_schema):
     session.commit() 
     session.close()
 
-
-
     return {       
         'api': api,        
         'status': status,        
@@ -711,9 +696,8 @@ async def category_delete(param : category_schema.Category_schema):
     }
 
 
-
-@router.post("/intent/list" , response_model=intent_schema.IntentList)
-def intent_list(param : intent_schema.IntentSrchParam):
+@router.post("/intent/list" , response_model=oee_intent_schema.IntentList)
+def intent_list(param : oee_intent_schema.IntentSrchParam):
     print("====================mngWc_app intent_list start==========")
     session  = engine.sessionmaker()
     total_cnt, _intent_list = intent_biz.get_intent_list(param)    
@@ -738,7 +722,7 @@ def intent_list(param : intent_schema.IntentSrchParam):
 
 
 @router.post("/intent/insert")
-async def intent_insert(param : intent_schema.Intent_schema):
+async def intent_insert(param : oee_intent_schema.Intent_schema):
     print("============ mngWc_app intent insert start==========")
     print("============ mngWc_app intent insert param.create_id: ", param.create_id)    
     #print("project_id: " , project_id)    
@@ -785,7 +769,7 @@ async def intent_insert(param : intent_schema.Intent_schema):
 
 
 @router.post("/intent/update")
-async def projectRagDoc_update(param : intent_schema.Intent_schema):
+async def projectRagDoc_update(param : oee_intent_schema.Intent_schema):
     print("============ mngWc_app intent insert update==========")
     #print("project_id: " , project_id)    
     #print("project_name: " , project_name) 
@@ -830,7 +814,7 @@ async def projectRagDoc_update(param : intent_schema.Intent_schema):
     }
 
 @router.post("/intent/delete")
-async def intent_delete(param : intent_schema.Intent_schema):
+async def intent_delete(param : oee_intent_schema.Intent_schema):
     print("============ mngWc_app intent delete start==========")
     #print("project_id: " , project_id)    
     #print("project_name: " , project_name)        

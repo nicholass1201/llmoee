@@ -80,8 +80,8 @@ def storingRagDoc(params : oee_project_rag_docs_schema.ProjectRagDocUrlParam):
     vectorstore = Chroma.from_documents \
         (documents=all_splits, 
             embedding = 
-            OpenAIEmbeddings(temperature=0, openai_api_key=config('OPENAI_API_KEY'), 
-            openai_organization=openai_api_key=config('OPENAI_APOPENAI_ORGANIZATION'),
+            OpenAIEmbeddings(temperature=0, openai_api_key=config('OPENAI_API_KEY')), 
+            openai_organization=config('OPENAI_APOPENAI_ORGANIZATION'),
             persist_directory=varRagDBDir
         )
     print("===========벡터db에 load2=========== vectorstore:", vectorstore)
@@ -91,7 +91,8 @@ def storingRagDoc(params : oee_project_rag_docs_schema.ProjectRagDocUrlParam):
     from langchain.prompts import PromptTemplate
     from langchain.schema.runnable import RunnablePassthrough
     from langchain.chat_models import ChatOpenAI
-    llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0, openai_api_keyconfig('OPENAI_API_KEY'), openai_organization=config('OPENAI_APOPENAI_ORGANIZATION'))
+
+    llm = ChatOpenAI( model_name="gpt-3.5-turbo", temperature=0, openai_api_key=config('OPENAI_API_KEY'), openai_organization=config('OPENAI_ORGANIZATION'))
     
     print("===========벡터db에 저장2==========")
     # db = Chroma.from_documents(docs, embeddings_model)

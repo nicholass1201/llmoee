@@ -236,3 +236,197 @@ INFO:     105.53.140.144:65408 - "GET / HTTP/1.1" 200 OK
 INFO:     105.53.140.144:65408 - "GET / HTTP/1.1" 200 OK
 INFO:     105.53.140.144:65409 - "GET /docs HTTP/1.1" 200 OK
 INFO:     105.53.140.144:65409 - "GET /openapi.json HTTP/1.1" 200 OK
+/home/sdiaadmin/llm_env/lib/python3.10/site-packages/pydantic/_internal/_config.py:322: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+======oee_proj path:  /home/sdiaadmin/llm/llmoee/oeeCbMgr
+======oee_proj path:  /home/sdiaadmin/llm/llmoee
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+Traceback (most recent call last):
+  File "/home/sdiaadmin/llm/llmoee/oeeCbMgr/oeeCbMgr_app.py", line 33, in <module>
+    from oeeLlmCbMgr102 import oee_llm_cb_submgr102
+  File "/home/sdiaadmin/llm/llmoee/oeeCbMgr/oeeLlmCbMgr102/oee_llm_cb_submgr102.py", line 81
+    (documents=all_splits, 
+    ^
+SyntaxError: '(' was never closed
+/home/sdiaadmin/llm_env/lib/python3.10/site-packages/pydantic/_internal/_config.py:322: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+======oee_proj path:  /home/sdiaadmin/llm/llmoee/oeeCbMgr
+======oee_proj path:  /home/sdiaadmin/llm/llmoee
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+Traceback (most recent call last):
+  File "/home/sdiaadmin/llm/llmoee/oeeCbMgr/oeeCbMgr_app.py", line 33, in <module>
+    from oeeLlmCbMgr102 import oee_llm_cb_submgr102
+  File "/home/sdiaadmin/llm/llmoee/oeeCbMgr/oeeLlmCbMgr102/oee_llm_cb_submgr102.py", line 84
+    openai_organization=openai_api_key=config('OPENAI_APOPENAI_ORGANIZATION'),
+                                      ^
+SyntaxError: invalid syntax
+/home/sdiaadmin/llm_env/lib/python3.10/site-packages/pydantic/_internal/_config.py:322: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+======oee_proj path:  /home/sdiaadmin/llm/llmoee/oeeCbMgr
+======oee_proj path:  /home/sdiaadmin/llm/llmoee
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+Traceback (most recent call last):
+  File "/home/sdiaadmin/llm/llmoee/oeeCbMgr/oeeCbMgr_app.py", line 33, in <module>
+    from oeeLlmCbMgr102 import oee_llm_cb_submgr102
+  File "/home/sdiaadmin/llm/llmoee/oeeCbMgr/oeeLlmCbMgr102/oee_llm_cb_submgr102.py", line 94
+    llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0, openai_api_keyconfig('OPENAI_API_KEY'), openai_organization=config('OPENAI_APOPENAI_ORGANIZATION'))
+                                                                                                                                                                  ^
+SyntaxError: positional argument follows keyword argument
+/home/sdiaadmin/llm_env/lib/python3.10/site-packages/pydantic/_internal/_config.py:322: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+======oee_proj path:  /home/sdiaadmin/llm/llmoee/oeeCbMgr
+======oee_proj path:  /home/sdiaadmin/llm/llmoee
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+Traceback (most recent call last):
+  File "/home/sdiaadmin/llm/llmoee/oeeCbMgr/oeeCbMgr_app.py", line 33, in <module>
+    from oeeLlmCbMgr102 import oee_llm_cb_submgr102
+  File "/home/sdiaadmin/llm/llmoee/oeeCbMgr/oeeLlmCbMgr102/oee_llm_cb_submgr102.py", line 95
+    llm = ChatOpenAI( model_name="gpt-3.5-turbo", temperature=0, openai_api_keyconfig('OPENAI_API_KEY'), openai_organization=config('OPENAI_ORGANIZATION'))
+                                                                                                                                                          ^
+SyntaxError: positional argument follows keyword argument
+/home/sdiaadmin/llm_env/lib/python3.10/site-packages/pydantic/_internal/_config.py:322: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+======oee_proj path:  /home/sdiaadmin/llm/llmoee/oeeCbMgr
+======oee_proj path:  /home/sdiaadmin/llm/llmoee
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+Traceback (most recent call last):
+  File "/home/sdiaadmin/llm/llmoee/oeeCbMgr/oeeCbMgr_app.py", line 34, in <module>
+    from oeeLlmCbMgr201 import oee_llm_cb_submgr201
+  File "/home/sdiaadmin/llm/llmoee/oeeCbMgr/oeeLlmCbMgr201/oee_llm_cb_submgr201.py", line 41
+    (documents=all_splits, 
+    ^
+SyntaxError: '(' was never closed
+/home/sdiaadmin/llm_env/lib/python3.10/site-packages/pydantic/_internal/_config.py:322: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+======oee_proj path:  /home/sdiaadmin/llm/llmoee/oeeCbMgr
+======oee_proj path:  /home/sdiaadmin/llm/llmoee
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+/home/sdiaadmin/llm/llmoee/oeeCbMgr
+===================mngWc_app FastAPI loading1==========
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+INFO:     Started server process [107192]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [107192]

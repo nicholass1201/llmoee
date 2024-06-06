@@ -1,0 +1,20 @@
+/home/sdiaadmin/llm_env/lib/python3.10/site-packages/pydantic/_internal/_config.py:322: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+/home/sdiaadmin/llm/llmoee
+===================chatbot_models project class====
+======company_biz path:  /home/sdiaadmin/llm/llmoee/oeeSysAdmin
+======company_biz path:  /home/sdiaadmin/llm/llmoee
+===================chatbot_models project class====
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+INFO:     Started server process [107302]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8003 (Press CTRL+C to quit)
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [107302]

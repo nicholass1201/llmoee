@@ -216,3 +216,68 @@ INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
 INFO:     Finished server process [99876]
+/home/sdiaadmin/llm_env/lib/python3.10/site-packages/pydantic/_internal/_config.py:322: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+/home/sdiaadmin/llm_env/lib/python3.10/site-packages/langchain/_api/module_import.py:92: LangChainDeprecationWarning: Importing Chroma from langchain.vectorstores is deprecated. Please replace deprecated imports:
+
+>> from langchain.vectorstores import Chroma
+
+with new imports of:
+
+>> from langchain_community.vectorstores import Chroma
+You can use the langchain cli to **automatically** upgrade many imports. Please see documentation here https://python.langchain.com/v0.2/docs/versions/v0_2/ 
+  warn_deprecated(
+/home/sdiaadmin/llm_env/lib/python3.10/site-packages/langchain/_api/module_import.py:92: LangChainDeprecationWarning: Importing OpenAIEmbeddings from langchain.embeddings is deprecated. Please replace deprecated imports:
+
+>> from langchain.embeddings import OpenAIEmbeddings
+
+with new imports of:
+
+>> from langchain_community.embeddings import OpenAIEmbeddings
+You can use the langchain cli to **automatically** upgrade many imports. Please see documentation here https://python.langchain.com/v0.2/docs/versions/v0_2/ 
+  warn_deprecated(
+/home/sdiaadmin/llm_env/lib/python3.10/site-packages/pydantic/_internal/_config.py:322: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+/home/sdiaadmin/llm_env/lib/python3.10/site-packages/langchain/chat_models/__init__.py:31: LangChainDeprecationWarning: Importing chat models from langchain is deprecated. Importing from langchain will no longer be supported as of langchain==0.2.0. Please import from langchain-community instead:
+
+`from langchain_community.chat_models import ChatOpenAI`.
+
+To install langchain-community run `pip install -U langchain-community`.
+  warnings.warn(
+/home/sdiaadmin/llm_env/lib/python3.10/site-packages/langchain_core/_api/deprecation.py:119: LangChainDeprecationWarning: The class `ChatOpenAI` was deprecated in LangChain 0.0.10 and will be removed in 0.3.0. An updated version of the class exists in the langchain-openai package and should be used instead. To use it run `pip install -U langchain-openai` and import as `from langchain_openai import ChatOpenAI`.
+  warn_deprecated(
+/home/sdiaadmin/llm/llmoee
+======oee_proj path:  /home/sdiaadmin/llm/llmoee/oeeCbMgr
+======oee_proj path:  /home/sdiaadmin/llm/llmoee
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+------1------
+-----2------
+==========sys.path.append:  /home/sdiaadmin/llm/llmoee
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+=================__file__:  /home/sdiaadmin/llm/llmoee/oeeCb/oeeLlmCb101/oee_chat_sub_llm_predict_101.py
+=================os.path.dirname(os.path.abspath(os.path.dirname(__file__))):  /home/sdiaadmin/llm/llmoee/oeeCb
+/home/sdiaadmin/llm/llmoee/oeeCb
+===================chatbot_models project class====
+==========chatbot_models Proj_atch_doc class===============
+==========chatbot_models Proj_atch_doc_file class===============
+chatbot_models oee_category class
+========== chatbot_models oee_intent class
+DB connection string---: postgresql+psycopg2://oee_cb:amsdi$01@105.53.140.229:5432/oee_cb_db
+Engine(postgresql+psycopg2://oee_cb:***@105.53.140.229:5432/oee_cb_db)
+INFO:     Started server process [107242]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [107242]

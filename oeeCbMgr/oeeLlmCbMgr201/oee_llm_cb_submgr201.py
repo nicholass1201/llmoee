@@ -40,7 +40,7 @@ def biz_rag_save(param : oee_project_rag_docs_schema.ProjectRagDocSrchParam):
         vectorstore = Chroma.from_documents \
             (documents=all_splits, 
                 embedding = 
-                OpenAIEmbeddings(temperature=0, openai_api_key=config('OPENAI_API_KEY'), 
+                OpenAIEmbeddings(temperature=0, openai_api_key=config('OPENAI_API_KEY')), 
                 openai_organization=config('OPENAI_ORGANIZATION'), 
                 persist_directory=varRagDir
             )

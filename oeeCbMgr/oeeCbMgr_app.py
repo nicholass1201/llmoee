@@ -40,7 +40,7 @@ engine = EngineConn()
 
 
 router = APIRouter(
-    prefix = "/wc/v1"
+    prefix = "/oee/v1"
 )
 
 # from fastapi import UploadFile, File

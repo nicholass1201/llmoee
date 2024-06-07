@@ -1,18 +1,21 @@
+from datetime import datetime
 from fastapi import APIRouter
-import uvicorn
 from fastapi import FastAPI, Depends, Path, HTTPException
+from fastapi.encoders import jsonable_encoder
+import uvicorn
 import json # 참고: https://blog.naver.com/sp_sosa/222841775690
 import sys, os
-# sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+from langchain.chat_models import ChatOpenAI
+from langchain.chat_models import ChatOpenAI
+from langchain.schema import AIMessage, HumanMessage, SystemMessage
+
 print(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
-#from mngChatBot.db_proc_ac import engineconn, text
-from fastapi.encoders import jsonable_encoder
 from decouple import config
 
 # import chatSubRag_biz
 import  oee_summary_schema
 # import summaryMain_biz
-from datetime import datetime
+import  oee_summary_biz
 
 app = FastAPI()
 #engine = engineconn()
@@ -23,14 +26,7 @@ router = APIRouter(
 )
 
 original_text="NewJeans뉴진스왼쪽부터 하니, 다니엘, 민지, 혜인, 해린기본 정보결성 지역대한민국 서울특별시장르K-pop댄스 팝활동 시기2022년 7월 22일 ~레이블하이브소속사어도어웹사이트newjeans.kr 구성원민지하니다니엘해린혜인 NewJeans(뉴진스)는 2022년 7월 22일에 데뷔한 대한민국의 5인조 걸 그룹으로, 소속사는 하이브 산하의 레이블인 어도어이다. SM 엔터테인먼트 비주얼 디렉터 출신으로 하이브에 영입된 민희진이 프로듀서로 나서서 발굴한 걸 그룹이다. 2022년 8월 18일에 《엠카운트다운》에서 데뷔 3주만에 첫 1위에 올랐다. 2023년 8월에 잼버리 폐회식 K-POP 공연에 출연했다."
-
-from langchain.chat_models import ChatOpenAI
-
-# chatgpt = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0, openai_api_key=config('OPENAI_API_KEY'), openai_organization=config('OPENAI_ORGANIZATION'))
 chatgpt = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0, openai_api_key=config('OPENAI_API_KEY'), openai_organization=config('OPENAI_ORGANIZATION') )
-
-from langchain.chat_models import ChatOpenAI
-from langchain.schema import AIMessage, HumanMessage, SystemMessage
 
 messages = [
     SystemMessage(

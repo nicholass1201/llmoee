@@ -7,6 +7,6 @@ if ps ax | grep -v grep | grep $PROC_NAME_OEE_SUMMARY > /dev/null
 then
     echo "$PROC_NAME_OEE_SUMMARY service running. kill all"
 else
-    nohup python "$APP_PATH_wcSummary/$PROC_NAME_OEE_SUMMARY" >> ac_wcSummary.out &
-    echo "start wc_wcSummary service"
+    nohup python "$APP_PATH_OEE_SUMMARY/$PROC_NAME_OEE_SUMMARY" >> oeeSummary.out &
+    echo "start oee_Summary service"
 fi

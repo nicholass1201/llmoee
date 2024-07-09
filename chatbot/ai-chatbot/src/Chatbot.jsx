@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Chatbot.css'; // Import the CSS file
 
 const Chatbot = () => {
     const [messages, setMessages] = useState([]);
@@ -6,7 +7,6 @@ const Chatbot = () => {
 
     const sendMessage = async () => {
         try {
-            console.log("Sending message:", input);
             const response = await fetch("http://localhost:8000/chatbot/", {
                 method: "POST",
                 headers: {
@@ -16,7 +16,6 @@ const Chatbot = () => {
             });
 
             const data = await response.json();
-            console.log("Received response:", data);
 
             if (data.response) {
                 setMessages([...messages, { text: input, from: "user" }, { text: data.response, from: "bot" }]);
@@ -30,20 +29,22 @@ const Chatbot = () => {
     };
 
     return (
-        <div>
-            <div>
+        <div className="chat-container">
+            <div className="message-box">
                 {messages.map((msg, index) => (
-                    <div key={index} className={msg.from === "user" ? "user-message" : "bot-message"}>
+                    <div key={index} className={`message ${msg.from === "user" ? "user-message" : "bot-message"}`}>
                         {msg.text}
                     </div>
                 ))}
             </div>
-            <input 
-                value={input} 
-                onChange={(e) => setInput(e.target.value)} 
-                onKeyPress={(e) => e.key === 'Enter' && sendMessage()} 
-            />
-            <button onClick={sendMessage}>Send</button>
+            <div className="input-container">
+                <input 
+                    value={input} 
+                    onChange={(e) => setInput(e.target.value)} 
+                    onKeyPress={(e) => e.key === 'Enter' && sendMessage()} 
+                />
+                <button onClick={sendMessage}>Send</button>
+            </div>
         </div>
     );
 };
